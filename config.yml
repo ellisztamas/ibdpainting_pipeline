@@ -1,0 +1,49 @@
+# ====================================#
+# Things you should definitely change # 
+# ====================================#
+
+# Path to a comma-separated sample sheet with columns:
+# 1. sample name
+# 2. Names of expected parents. If there are more than one, separate with whitespace.
+sample_sheet: "/groups/nordborg/projects/crosses/tom/02_library/ibdpainting_pipeline/test_data/test_sample_sheet.csv"
+
+# VCF file containing genotype calls for the test panel.
+test_panel: "/groups/nordborg/projects/crosses/tom/02_library/ibdpainting_pipeline/test_data/panel_to_test.vcf.gz"
+
+
+# =============================== #
+# Things you might want to change #
+# =============================== #
+
+# A VCF file containing genotype calls for the reference panel.
+reference_panel: "/groups/nordborg/projects/crosses/tom/02_library/ibdpainting_pipeline/test_data/reference_panel.vcf.gz"
+
+
+# =================== #
+# Additional settings #
+# =================== #
+
+# Set the window size (in base pairs)
+window_size: 500000
+
+# If set, write an intermediate text file giving genetic distance between the crossed
+# individual and each candidate at each window in the genome. Defaults to False, because these
+# can be quite large.
+keep_ibd_table: False
+
+# Optional number of the best matching candidates to plot so that the HTML files do not get
+# too large and complicated. Ignored if this is more than the number of samples.
+max_to_plot: 20
+
+# If set, save the output plot as an interactive HTML plot including information on candidates
+# within the plot.
+interactive: True
+
+# Height in pixels of the output PNG file. Defaults to 675.
+height: 675
+# Height in pixels of the output PNG file. Defaults to 900.
+width: 900
+  
+# If set, plot the heterozygosity of the test individual in the output plot.
+plot_heterozygosity: True
+                        

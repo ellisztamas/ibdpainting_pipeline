@@ -1,0 +1,20 @@
+name: ibdpainting_pipeline
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.12
+  - numpy
+  - h5py
+  - pandas
+  - kaleido
+  - plotly
+  - snakemake
+  - snakemake-executor-plugin-slurm
+  - bcftools
+  - bedtools
+  - pip
+  - pip:
+      - scikit-allel
+      - ibdpainting
