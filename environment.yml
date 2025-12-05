@@ -8,7 +8,7 @@ dependencies:
   - numpy
   - h5py
   - pandas
-  - kaleido
+  - python-kaleido<1
   - plotly
   - snakemake
   - snakemake-executor-plugin-slurm

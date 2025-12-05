@@ -37,7 +37,8 @@ max_to_plot: 20
 
 # If set, save the output plot as an interactive HTML plot including information on candidates
 # within the plot.
-interactive: True
+# Note: this currently does not work
+interactive: False
 
 # Height in pixels of the output PNG file. Defaults to 675.
 height: 675
@@ -46,4 +47,4 @@ width: 900
   
 # If set, plot the heterozygosity of the test individual in the output plot.
 plot_heterozygosity: True
-                        
+

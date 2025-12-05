@@ -80,7 +80,7 @@ Here is an example to run the test dataset, assuming your current working direct
 
 Activate the conda environment.
 ```sh
-conda activate mpileup_call_pipeline
+conda activate ibdpainting_pipeline
 ```
 
 Define paths to snakemake file, config file and where to store the output.
