@@ -29,6 +29,9 @@ rule idbpainting:
         interactive_flag     = lambda wildcards: interactive_flag(),
         heterozygosity_flag  = lambda wildcards: heterozygosity_flag(),
         keep_ibd_table_flag  = lambda wildcards: keep_ibd_table_flag()
+    log:
+        out = "logs/ibdpainting/{pair}.out",
+        err = "logs/ibdpainting/{pair}.err"
     resources:
         qos = 'rapid',
         mem_mb = 10*1024,
@@ -47,5 +50,6 @@ rule idbpainting:
             {params.interactive_flag} \
             {params.heterozygosity_flag} \
             {params.keep_ibd_table_flag} \
-            --outdir {params.output_dir}
+            --outdir {params.output_dir} \
+            > {log.out} 2> {log.err}
         """

@@ -7,10 +7,14 @@ rule convert_to_HDF5:
         qos = 'rapid',
         mem_mb = lambda wildcards, attempt: 20*1024 * attempt,
         runtime = 60
+    log:
+        out = "logs/convert_to_HDF5/{pair}.out",
+        err = "logs/convert_to_HDF5/{pair}.err"
     shell:
         """
         python {workflow.basedir}/scripts/vcf_to_hdf5.py \
             --input {input} \
-            --output {output}
+            --output {output} \
+            > {log.out} 2> {log.err}
         """
         

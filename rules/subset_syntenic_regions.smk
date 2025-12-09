@@ -8,6 +8,9 @@ rule subset_syntenic_regions:
         qos = 'short',
         mem_mb = lambda wildcards, attempt: attempt * 10*1024,
         runtime = lambda wildcards, attempt: attempt * 2*60,
+    log:
+        out = "logs/subset_syntenic_regions/{pair}.out",
+        err = "logs/subset_syntenic_regions/{pair}.err"
     threads: 10
     shell:
         """
@@ -18,5 +21,6 @@ rule subset_syntenic_regions:
             --write-index \
             --threads {threads} \
             -Oz -o {output} \
-            {input.vcf}
+            {input.vcf} \
+            > {log.out} 2> {log.err}
         """
