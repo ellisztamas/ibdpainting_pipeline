@@ -75,8 +75,8 @@ For every sample this should contain:
 
 * A `_plot_ibd.png` plot
 * A `_ibd_scores.csv` file giving the genetic distances to each (pair of) candidate(s)
-* If specified in the `config.yaml`, an interactive `_plot_ibd.html` plot.
-* If specified in the `config.yaml`, an `_ibd_scores.csv` file giving the genetic distance at every window for every reference individual.
+* If specified in the `config.yml`, an interactive `_plot_ibd.html` plot.
+* If specified in the `config.yml`, an `_ibd_scores.csv` file giving the genetic distance at every window for every reference individual.
 
 There will also be directories with logs and intermediate files.
 Unless you plan to run the pipeline again, you can probably delete these.
