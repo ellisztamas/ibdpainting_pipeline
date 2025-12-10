@@ -29,7 +29,10 @@ If you are using ibdpainting with a working directory (`snakemake [...] --direct
 The pipeline relies on a a comma-separated sample sheet with columns:
 
 1. `sample`: The name of a single sample to be tested. Every sample name must appear in the VCF file for the test panel.
-2. `expected_parents`: Names of expected parents. If there are more than one, separate with **whitespace** (not a tab!). In principle there can be more than two, but I haven't tested this. Every expected parent must appear in the reference panel.
+2. `expected_parents`: Names of expected parents.
+   * If there are more than one, separate with **whitespace**. That means that the VCF sample names cannot contain whitespace (but they probably shouldn't anyway...).
+   * In principle there can be more than two, but I haven't tested this.
+   * Every expected parent must appear in the reference panel.
 
 The sample sheet can also contain other columns as long as these are present.
 
