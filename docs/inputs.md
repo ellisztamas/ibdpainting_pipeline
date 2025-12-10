@@ -6,17 +6,17 @@ Here is an overview of the input data and parameters to run the pipeline.
 
 - [Input files and parameters](#input-files-and-parameters)
   - [Contents](#contents)
-  - [`config.yaml`](#configyaml)
+  - [`config.yml`](#configyml)
   - [Data files](#data-files)
     - [Sample sheet](#sample-sheet)
     - [Genotype data](#genotype-data)
   - [Additional settings](#additional-settings)
 
 
-## `config.yaml`
+## `config.yml`
 
-Input parameters and paths to input files are defined in a config file call `config.yaml`.
-There is an [example config.yaml file](../config.yaml) in the top level of this directory.
+Input parameters and paths to input files are defined in a config file call `config.yml`.
+There is an [example config.yml file](../config.yml) in the top level of this directory.
 Create as many copies of this as you need, and edit as necessary for each analysis.
 See the docs on [usage](./usage.md) to see how to specify the path to the config file.
 

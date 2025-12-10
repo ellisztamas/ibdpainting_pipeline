@@ -62,7 +62,7 @@ If it fails, you may be able to install it manually with `pip install scikit-all
 
 ## Use the pipeline
 
-* See [here](docs/inputs.md) for the files and parameter settings.
+* See [here](docs/inputs.md) for the input files and parameter settings.
 * See [here](docs/usage.md) for how to run the pipeline
 * See [here](docs/troubleshooting.md) for suggestions about troubleshooting in the (likely) case of errors.
 
