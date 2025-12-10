@@ -30,11 +30,11 @@ rule idbpainting:
         heterozygosity_flag  = lambda wildcards: heterozygosity_flag(),
         keep_ibd_table_flag  = lambda wildcards: keep_ibd_table_flag()
     log:
-        out = "logs/ibdpainting/{pair}.out",
-        err = "logs/ibdpainting/{pair}.err"
+        out = "logs/ibdpainting/{sample}.out",
+        err = "logs/ibdpainting/{sample}.err"
     resources:
         qos = 'rapid',
-        mem_mb = 10*1024,
+        mem_mb = 1*1024,
         runtime = 60
     shell:
         """

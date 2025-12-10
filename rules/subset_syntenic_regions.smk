@@ -6,7 +6,7 @@ rule subset_syntenic_regions:
         "subset_syntenic_regions/{pair}.vcf.gz"
     resources:
         qos = 'short',
-        mem_mb = lambda wildcards, attempt: attempt * 10*1024,
+        mem_mb = lambda wildcards, attempt: attempt * 2*1024,
         runtime = lambda wildcards, attempt: attempt * 2*60,
     log:
         out = "logs/subset_syntenic_regions/{pair}.out",

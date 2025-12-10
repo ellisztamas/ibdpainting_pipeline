@@ -5,7 +5,7 @@ rule convert_to_HDF5:
         "hdf5/{pair}.hdf5"
     resources:
         qos = 'rapid',
-        mem_mb = lambda wildcards, attempt: 20*1024 * attempt,
+        mem_mb = lambda wildcards, attempt: 2*1024 * attempt,
         runtime = 60
     log:
         out = "logs/convert_to_HDF5/{pair}.out",
