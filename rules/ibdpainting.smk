@@ -34,7 +34,7 @@ rule idbpainting:
         err = "logs/ibdpainting/{sample}.err"
     resources:
         qos = 'rapid',
-        mem_mb = 1*1024,
+        mem_mb = lambda wildcards, attempt: attempt * 1*1024,
         runtime = 60
     shell:
         """
