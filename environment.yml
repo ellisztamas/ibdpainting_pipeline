@@ -15,5 +15,5 @@ dependencies:
   - bcftools=1.22
   - pip=25.3
   - pip:
-      - scikit-allel=1.3.13
+      - scikit-allel==1.3.13
       - ibdpainting
