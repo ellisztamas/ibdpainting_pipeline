@@ -2,14 +2,14 @@ name: ibdpainting_pipeline
 channels:
   - conda-forge
   - bioconda
-  - defaults
 dependencies:
-  - python=3.12
+  - python=3.12.12
   - numpy=2.2.2
   - h5py=3.15.1
   - pandas=2.3.3
   - python-kaleido<1
   - plotly=6.5.0
+  - pytest=9.0.2
   - snakemake=9.13.7
   - snakemake-executor-plugin-slurm=2.0.0
   - bcftools=1.22
