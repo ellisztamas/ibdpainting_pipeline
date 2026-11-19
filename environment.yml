@@ -1,4 +1,4 @@
-name: ibdpainting_pipeline
+name: ibdpainting
 channels:
   - conda-forge
   - bioconda
