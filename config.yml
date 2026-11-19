@@ -44,3 +44,6 @@ height: 675
 # Height in pixels of the output PNG file. Defaults to 900.
 width: 900
 
+# If True and there are exactly two parents, the output plots include a green curve
+# showing the match to the expected F1 genotype between the expected parents.
+plot_heterozygosity: False

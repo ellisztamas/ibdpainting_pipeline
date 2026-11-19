@@ -10,7 +10,7 @@ def interactive_flag():
 def keep_ibd_table_flag():
     return "--keep_ibd_table" if config.get("keep_ibd_table", False) else "--no-keep_ibd_table"
 def plot_heterozygosity_flag():
-    return "--plot_heterozygosity" if config.get("plot_heterozygosity", True) else "--no-plot_heterozygosity"
+    return "--plot_heterozygosity" if config.get("plot_heterozygosity", False) else "--no-plot_heterozygosity"
 
 
 rule idbpainting:

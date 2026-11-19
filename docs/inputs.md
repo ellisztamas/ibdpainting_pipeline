@@ -80,4 +80,4 @@ If you are using bisulphite data consider pre-filtering out SNPs that vary as C 
 * `interactive`: If set, save the output plot as an interactive HTML plot including information on candidates within the plot.
 * `height`: Height in pixels of the output PNG file. Defaults to 675.
 * `width`: Height in pixels of the output PNG file. Defaults to 900.  
-*`heterozygosity`: If set, plot the heterozygosity of the test individual in the output plot. Defaults to True
+* `plot_heterozygosity`: If `True` and there are exactly two expected parents, the output plots include a green curve showing the match to the expected F1 genotype between the expected parents. Defaults to `False`.
