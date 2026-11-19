@@ -9,6 +9,8 @@ def interactive_flag():
     return "--interactive" if config.get("interactive", True) else "--no-interactive"
 def keep_ibd_table_flag():
     return "--keep_ibd_table" if config.get("keep_ibd_table", False) else "--no-keep_ibd_table"
+def plot_heterozygosity_flag():
+    return "--plot_heterozygosity" if config.get("plot_heterozygosity", True) else "--no-plot_heterozygosity"
 
 
 rule idbpainting:
@@ -25,7 +27,8 @@ rule idbpainting:
         height={height},
         width={width},
         interactive_flag     = lambda wildcards: interactive_flag(),
-        keep_ibd_table_flag  = lambda wildcards: keep_ibd_table_flag()
+        keep_ibd_table_flag  = lambda wildcards: keep_ibd_table_flag(),
+        plot_heterozygosity_flag = lambda wildcards: plot_heterozygosity_flag()
     log:
         out = "logs/ibdpainting/{sample}.out",
         err = "logs/ibdpainting/{sample}.err"
@@ -46,6 +49,7 @@ rule idbpainting:
             --expected_match {params.expected_parents} \
             {params.interactive_flag} \
             {params.keep_ibd_table_flag} \
+            {params.plot_heterozygosity_flag} \
             --outdir {params.output_dir} \
             > {log.out} 2> {log.err}
         """
