@@ -12,7 +12,7 @@ rule convert_to_HDF5:
         err = "logs/convert_to_HDF5/{pair}.err"
     shell:
         """
-        python {workflow.basedir}/scripts/vcf_to_hdf5.py \
+        {PYTHON} {workflow.basedir}/scripts/vcf_to_hdf5.py \
             --input {input} \
             --output {output} \
             > {log.out} 2> {log.err}

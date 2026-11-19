@@ -1,4 +1,9 @@
+import sys
 import pandas as pd
+
+# Run Python scripts with the interpreter running Snakemake, rather than
+# whichever `python` comes first on PATH in the job environment.
+PYTHON = sys.executable
 
 # Get sample sheet path from CLI/config; can provide a default if you like
 SAMPLESHEET = config.get("sample_sheet")
