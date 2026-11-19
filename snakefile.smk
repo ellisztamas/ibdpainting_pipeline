@@ -1,3 +1,4 @@
+import os
 import sys
 import pandas as pd
 
@@ -5,21 +6,28 @@ import pandas as pd
 # whichever `python` comes first on PATH in the job environment.
 PYTHON = sys.executable
 
+# Resolve relative paths in the config file to absolute paths
+PROJECT_ROOT = config["project_root"]
+def resolve(path):
+    return os.path.realpath(os.path.join(PROJECT_ROOT, path))
+
 # Get sample sheet path from CLI/config; can provide a default if you like
-SAMPLESHEET = config.get("sample_sheet")
+SAMPLESHEET = resolve(config.get("sample_sheet"))
 samples_df = pd.read_csv(SAMPLESHEET)
 # Dict of samples
 sample_dict = samples_df.set_index("sample", drop=False).to_dict(orient="index")
 SAMPLES = samples_df["sample"].tolist()
 
 # BED file listing genic regions in the TAIR10 coordinate system.
+# This ships alongside the pipeline itself, so it is anchored to the
+# Snakefile's own location rather than PROJECT_ROOT.
 tair10_genic_regions = os.path.join(workflow.basedir, "TAIR10_GFF3_genes.bed")
 
 
 
 # Hocus-pocus to get the test and reference panels to be processed in parallel.
-CONFIG_REF = config["reference_panel"]
-CONFIG_TEST = config["test_panel"]
+CONFIG_REF = resolve(config["reference_panel"])
+CONFIG_TEST = resolve(config["test_panel"])
 
 pair_samples = ["reference", "test"]
 def get_pair_input(wildcards):
